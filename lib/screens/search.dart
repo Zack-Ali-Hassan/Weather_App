@@ -28,8 +28,11 @@ class _SearchScreenState extends State<SearchScreen> {
         isLoading = !isLoading;
       });
     } catch (e) {
+      setState(() {
+        isLoading = !isLoading;
+      });
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text(e.toString()),
+        content: Text("${cityName} is not founded!!☹️☹️☹️☹️☹️☹️☹️☹️☹️"),
         duration: Duration(seconds: 5),
       ));
     }
